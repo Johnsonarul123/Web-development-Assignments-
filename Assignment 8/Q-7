@@ -1,1 +1,22 @@
 Q.7 Explain Prop Drilling in React & Ways to avoid it
+
+Prop drilling in React refers to the process of passing props through multiple levels of nested components in order to reach a deeply nested component that needs access to those props. It can lead to code complexity and maintenance issues.
+
+Here's an explanation of prop drilling and ways to avoid it:
+
+1. Prop drilling occurs when props need to be passed through intermediate components that don't actually use those props but only serve as a conduit to pass them down.
+
+2. As the number of nested components increases, prop drilling becomes more cumbersome and can make the code harder to understand and maintain.
+
+Ways to avoid prop drilling:
+
+1. Use React Context: React Context provides a way to share data between components without explicitly passing props through each level. It allows you to create a "context" and provide values to it, which can be accessed by any component within the context's scope.
+
+2. Use Redux or a State Management Library: Redux and other state management libraries help centralize and manage the application state. With Redux, you can store shared data in a global store and access it from any component without the need for prop drilling.
+
+3. Utilize React Hooks: React Hooks, such as `useState` and `useReducer`, allow you to manage state within functional components. You can use hooks to store and update data at the appropriate level and avoid the need to pass props through intermediate components.
+
+4. Component Composition: Instead of passing props through multiple levels, consider composing components in a way that allows you to directly pass the necessary props to the target component. This can be achieved by restructuring the component hierarchy or using techniques like render props or higher-order components.
+
+By adopting these approaches, you can minimize or eliminate the need for prop drilling in your React application, resulting in cleaner and more maintainable code.
+

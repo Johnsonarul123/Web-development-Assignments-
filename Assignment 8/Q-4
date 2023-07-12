@@ -1,1 +1,34 @@
 Q.4 Whats component? Types of component
+
+In React, a component is a reusable and self-contained piece of code that encapsulates the UI and logic of a specific part of a user interface. Components allow you to break down your UI into smaller, manageable parts, making your code more modular and easier to understand.
+
+Here's a brief explanation of the types of components in React:
+
+1. Function Components:
+   - Function components are the simplest type of components in React.
+   - They are JavaScript functions that return JSX (HTML-like) code.
+   - Function components are used for presenting static content or stateless UI elements.
+   - They are also commonly used for rendering presentational or "dumb" components.
+
+2. Class Components:
+   - Class components are JavaScript classes that extend the React Component class.
+   - They have more features and capabilities than function components.
+   - Class components are used for handling complex logic, maintaining state, and interacting with lifecycle methods.
+   - They are commonly used for creating container or "smart" components.
+
+3. Higher-Order Components (HOCs):
+   - Higher-Order Components are functions that take a component as input and return an enhanced version of that component.
+   - HOCs enable code reuse, composition, and add additional functionality to components.
+   - They are used for implementing cross-cutting concerns such as authentication, logging, or data fetching.
+
+4. React.PureComponent:
+   - PureComponent is a base class provided by React that automatically performs a shallow prop and state comparison to optimize rendering.
+   - PureComponent reduces unnecessary re-renders when props or state don't change.
+   - It is useful when you want to improve performance by preventing unnecessary updates in certain scenarios.
+
+5. React.Component:
+   - React.Component is the base class for creating class components in React.
+   - It provides the core functionality for managing state, handling lifecycle methods, and rendering JSX.
+   - Most class components inherit from React.Component and extend its functionality.
+
+These are the commonly used types of components in React, each serving a specific purpose in building user interfaces. By composing and combining these components, you can create complex and interactive applications.

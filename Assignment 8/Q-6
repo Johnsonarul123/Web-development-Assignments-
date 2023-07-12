@@ -1,1 +1,19 @@
 Q.6 Explain react component life cycle 
+
+The React component lifecycle refers to a series of predefined methods that are called at different stages of a component's existence. These methods allow you to perform specific actions and logic during various points of the component's lifecycle. Here's a simplified explanation of the React component lifecycle:
+
+1. Mounting Phase:
+- `constructor()`: Called when a component is first created. It initializes the component's state and binds event handlers.
+- `render()`: Responsible for rendering the component's JSX code or null.
+- `componentDidMount()`: Invoked after the component has been rendered to the DOM. It is used for performing side effects, such as data fetching or subscribing to events.
+
+2. Updating Phase:
+- `render()`: Re-rendering occurs if the component's props or state change.
+- `componentDidUpdate(prevProps, prevState)`: Called after the component is re-rendered due to prop or state changes. It is used to handle side effects based on the updated values.
+
+3. Unmounting Phase:
+- `componentWillUnmount()`: Invoked when the component is about to be removed from the DOM. It is used to clean up any resources, event listeners, or subscriptions created in `componentDidMount()`.
+
+In addition to these main lifecycle methods, React also provides a few others that are less commonly used or considered legacy methods. Some examples include `componentWillReceiveProps()`, `getDerivedStateFromProps()`, and `componentDidCatch()`. However, with the introduction of React Hooks, many of these methods are being replaced by alternative solutions.
+
+It's important to note that the React team is moving towards deprecating and removing some of the legacy lifecycle methods in favor of newer patterns and features, such as function components and React Hooks.
