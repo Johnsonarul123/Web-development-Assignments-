@@ -1,1 +1,44 @@
 Q.5 What is the significance of using "setState" instead of modifying state directly in React?
+
+The significance of using "setState" instead of modifying state directly in React is to ensure proper state management and trigger component re-rendering when the state changes.
+
+Here's a simple explanation of its significance:
+
+1. In React, state represents the data that a component needs to keep track of and use to render the UI.
+
+2. When you modify state directly by assigning a new value to it, React doesn't recognize the change and won't trigger a re-render of the component.
+
+3. Instead, React provides the "setState" function to update state in a proper and predictable manner. When you use "setState", React knows that the state has changed and can efficiently re-render the component.
+
+4. The "setState" function also allows you to provide an updated value for a specific part of the state, rather than replacing the entire state object. This granular control helps optimize rendering and prevents unnecessary re-renders of unaffected parts of the component.
+
+5. Additionally, when you use "setState", React performs a batch update, meaning it groups multiple state updates together and performs them in a single re-render. This batching helps improve performance and avoids unnecessary re-renders caused by multiple state changes.
+
+By using "setState" instead of modifying state directly, you ensure that React is aware of the state changes and can efficiently update the UI. It helps maintain the integrity of React's rendering process and provides better control over how your components update.
+
+Here's an example:
+
+```
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+```
+
+In this example, the "setCount" function is used to update the "count" state. When the button is clicked, the "increment" function is called, which uses "setCount" to increment the count by 1. React recognizes the state change and re-renders the component with the updated count value.
+
+In summary, using "setState" instead of modifying state directly in React ensures proper state management, triggers component re-rendering, provides granular control over state updates, and improves performance through batch updates.
+
+I hope this explanation helps! Let me know if you have any further questions.
