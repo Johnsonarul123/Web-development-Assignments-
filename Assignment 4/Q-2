@@ -1,0 +1,37 @@
+Q.2 Explain Temporal Dead Zone?
+
+The Temporal Dead Zone (TDZ) is a behavior in JavaScript that occurs when accessing a variable before it is declared, but within its scope. During this period, a reference error is thrown, preventing you from accessing the variable.
+
+Here are a few key points about the Temporal Dead Zone:
+
+1. **Variable Initialization**: In JavaScript, variables declared with `let` and `const` are hoisted to the top of their block scope, but they are not accessible until the point of their declaration. They enter a "dead zone" where you cannot access or use them.
+
+2. **Accessing Variables in the TDZ**: If you try to access a variable within its scope but before its declaration, you'll encounter a reference error. This is because the variable is in the TDZ and not yet initialized.
+
+Example:
+```javascript
+console.log(myVariable); // ReferenceError: Cannot access 'myVariable' before initialization
+let myVariable = 42;
+```
+
+3. **Temporal Dead Zone Scope**: The TDZ exists within the block scope where the variable is declared. It starts from the beginning of the block and ends at the point of declaration.
+
+Example:
+```javascript
+{
+  console.log(myVariable); // ReferenceError: Cannot access 'myVariable' before initialization
+  let myVariable = 42;
+}
+```
+
+4. **Hoisting and TDZ**: Even though `let` and `const` declarations are hoisted, they remain in the TDZ until their actual declaration. This prevents accessing and using the variables until that point.
+
+Example:
+```javascript
+console.log(myVariable); // ReferenceError: Cannot access 'myVariable' before initialization
+let myVariable = 42;
+```
+
+Understanding the Temporal Dead Zone is crucial for avoiding reference errors and writing clean code. It's recommended to always declare variables at the top of their scope to prevent encountering TDZ-related issues.
+
+In summary, the Temporal Dead Zone is a period where variables declared with `let` and `const` are hoisted to their block scope but are not yet accessible. Accessing variables within this zone results in a reference error. It serves as a mechanism to catch potential issues and enforce cleaner coding practices.

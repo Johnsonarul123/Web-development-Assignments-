@@ -1,0 +1,47 @@
+Q.1 Explain Hoisting in JavaScript
+
+Hoisting in JavaScript is a behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed. It means that you can use variables and functions before they are actually declared in your code.
+
+Here are a few key points about hoisting:
+
+1. **Variable Hoisting**: When a variable is hoisted, the declaration (not the initialization) is moved to the top of its scope. However, the assignment or value of the variable remains in its original place. If you try to access the variable before its declaration, it will have the value `undefined`.
+
+Example:
+```javascript
+console.log(myVariable); // Output: undefined
+var myVariable = "Hello";
+```
+
+2. **Function Hoisting**: Function declarations are also hoisted, meaning you can call a function before its actual declaration in the code.
+
+Example:
+```javascript
+myFunction(); // Output: "Hello"
+
+function myFunction() {
+  console.log("Hello");
+}
+```
+
+3. **Variable Declarations vs. Assignments**: It's important to note that only the variable or function declarations are hoisted, not the assignments. Only the names are moved to the top, not their values.
+
+Example:
+```javascript
+console.log(myVariable); // Output: undefined
+var myVariable = "Hello";
+```
+
+4. **Function Expressions are not hoisted**: Function expressions, such as assigning a function to a variable, are not hoisted. Only function declarations are hoisted.
+
+Example:
+```javascript
+myFunction(); // Error: myFunction is not a function
+
+var myFunction = function() {
+  console.log("Hello");
+};
+```
+
+Hoisting can be a bit confusing if you're not aware of this behavior, so it's good practice to declare your variables and functions at the beginning of their respective scopes to avoid any unexpected behaviors.
+
+In summary, hoisting in JavaScript allows you to use variables and functions before their actual declarations in the code. Variable and function declarations are moved to the top of their containing scope during the compilation phase. However, it's important to understand that only the declarations are hoisted, not the assignments or function expressions.

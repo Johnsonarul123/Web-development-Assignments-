@@ -1,0 +1,21 @@
+Q.9 How can you define default parameter values in ES6 functions?
+
+In ES6, you can define default parameter values for function arguments, which are used when the corresponding argument is not provided or is `undefined`. This allows you to set default values for function parameters.
+
+To define default parameter values in ES6 functions, you can simply assign a default value to a function parameter in the function declaration.
+
+Example:
+```javascript
+function greet(name = 'Anonymous') {
+  console.log(`Hello, ${name}!`);
+}
+
+greet(); // Output: Hello, Anonymous!
+greet('Alice'); // Output: Hello, Alice!
+```
+
+In this example, the `greet` function has a `name` parameter with a default value of `'Anonymous'`. If the `name` argument is not provided or is `undefined`, the default value `'Anonymous'` will be used.
+
+When calling the `greet` function without passing an argument, it uses the default value and prints "Hello, Anonymous!". When calling it with an argument, such as `'Alice'`, it uses the provided value and prints "Hello, Alice!".
+
+By defining default parameter values, you can handle cases where certain arguments are optional or not provided, allowing your functions to be more flexible. The default values provide a fallback option, ensuring that the function can still execute correctly even if not all arguments are explicitly provided.

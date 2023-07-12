@@ -1,0 +1,56 @@
+Q.5 What is the difference between let and const ?
+
+The main difference between `let` and `const` in JavaScript lies in how they handle variable assignment and reassignment.
+
+1. **Variable Assignment**: With `let`, you can assign a value to a variable and change that value later if needed. On the other hand, `const` is used for variables whose values should not be changed once assigned.
+
+Example using `let`:
+```javascript
+let x = 10;
+x = 20; // Valid - x can be reassigned
+```
+
+Example using `const`:
+```javascript
+const y = 10;
+y = 20; // Error - y cannot be reassigned
+```
+
+In the `let` example, the value of `x` can be changed because it is declared with `let`. However, in the `const` example, an error occurs because `y` is declared with `const`, and its value cannot be reassigned.
+
+2. **Block Scope**: Both `let` and `const` are block-scoped, meaning they are limited to the block in which they are declared. A block is typically defined by a pair of curly braces `{}`. Variables declared with `let` and `const` are accessible only within the block they are defined in or any nested blocks.
+
+Example using `let`:
+```javascript
+if (true) {
+  let z = 10;
+  console.log(z); // Valid - z is accessible within the block
+}
+console.log(z); // Error - z is not accessible outside the block
+```
+
+Example using `const`:
+```javascript
+if (true) {
+  const w = 10;
+  console.log(w); // Valid - w is accessible within the block
+}
+console.log(w); // Error - w is not accessible outside the block
+```
+
+In both examples, the variables `z` (with `let`) and `w` (with `const`) are accessible within the corresponding block but not outside it.
+
+3. **Hoisting**: Both `let` and `const` are hoisted to the top of their block scope during the compilation phase but are not initialized until the line of code where they are declared. This means that you cannot access variables declared with `let` or `const` before their declaration.
+
+Example:
+```javascript
+console.log(a); // Error - Cannot access 'a' before initialization
+let a = 10;
+
+console.log(b); // Error - Cannot access 'b' before initialization
+const b = 20;
+```
+
+In this example, trying to access `a` or `b` before their declaration results in a reference error due to the Temporal Dead Zone (TDZ).
+
+In summary, the key difference between `let` and `const` is that `let` allows variable reassignment and `const` does not. Both have block scope, meaning they are limited to the block they are defined in. However, it's important to note that variables declared with `const` are also read-only, preventing any changes to their values after assignment.

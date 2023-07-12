@@ -1,0 +1,46 @@
+Q.6  What is template literals in ES6 and how do you use them?
+
+Template literals in ES6 (also known as template strings) provide a convenient way to create strings with embedded variables or expressions. They use backticks (`) instead of single or double quotes and allow multi-line strings.
+
+Here's how you can use template literals:
+
+1. **Variable Interpolation**: To include variables or expressions within a template literal, you can use the `${}` syntax. Inside the curly braces, you can place any valid JavaScript expression or variable.
+
+Example:
+```javascript
+const name = "Alice";
+const message = `Hello, ${name}!`;
+console.log(message); // Output: Hello, Alice!
+```
+
+In this example, the variable `name` is interpolated within the template literal using `${name}`, resulting in the output "Hello, Alice!".
+
+2. **Multi-line Strings**: Template literals make it easier to create multi-line strings without the need for concatenation or escaping newlines. You can directly include line breaks within the template literal, and the resulting string will retain the line breaks.
+
+Example:
+```javascript
+const multiLineString = `This is a
+multi-line
+string.`;
+console.log(multiLineString);
+// Output:
+// This is a
+// multi-line
+// string.
+```
+
+In this example, the template literal spans multiple lines, and the resulting string preserves the line breaks within it.
+
+3. **Expression Evaluation**: Template literals can contain any valid JavaScript expression within the `${}` syntax. The expression is evaluated and the result is included in the final string.
+
+Example:
+```javascript
+const a = 10;
+const b = 5;
+const result = `The sum of ${a} and ${b} is ${a + b}.`;
+console.log(result); // Output: The sum of 10 and 5 is 15.
+```
+
+In this example, the expressions `${a}` and `${b}` are evaluated and their values are included in the resulting string, along with the expression `${a + b}` which represents the sum of `a` and `b`.
+
+Template literals provide a more convenient and readable way to create strings in JavaScript, especially when incorporating variables or expressions. They offer flexibility for constructing dynamic strings and simplify the process of creating multi-line strings.

@@ -1,0 +1,47 @@
+Q.3 Difference between var & let?
+
+The main difference between `var` and `let` in JavaScript is how they scope variables and handle hoisting.
+
+1. **Variable Scope**: Variables declared with `var` are function-scoped, meaning they are accessible throughout the entire function where they are declared, regardless of block scope. On the other hand, variables declared with `let` are block-scoped, meaning they are only accessible within the nearest enclosing block.
+
+Example:
+```javascript
+function example() {
+  if (true) {
+    var x = 10;
+    let y = 20;
+  }
+  console.log(x); // Output: 10
+  console.log(y); // ReferenceError: y is not defined
+}
+```
+
+In this example, `x` declared with `var` is accessible outside the `if` block because `var` is function-scoped. However, `y` declared with `let` is only accessible within the `if` block because `let` is block-scoped.
+
+2. **Hoisting**: Variables declared with `var` are hoisted to the top of their function or global scope. This means that you can access `var` variables before their declaration. However, they will have the initial value of `undefined` until they are assigned a value. On the other hand, variables declared with `let` are also hoisted, but they enter the Temporal Dead Zone (TDZ) and cannot be accessed until their declaration.
+
+Example:
+```javascript
+console.log(x); // Output: undefined
+var x = 10;
+
+console.log(y); // ReferenceError: Cannot access 'y' before initialization
+let y = 20;
+```
+
+In this example, `x` declared with `var` is hoisted, so it can be accessed before its declaration. However, it will have the initial value of `undefined`. `y` declared with `let` is also hoisted but enters the TDZ, resulting in a reference error if accessed before its declaration.
+
+3. **Re-declaration**: Variables declared with `var` can be re-declared within the same scope without any error. On the other hand, variables declared with `let` cannot be re-declared within the same block scope.
+
+Example:
+```javascript
+var x = 10;
+var x = 20; // No error, x is re-declared
+
+let y = 10;
+let y = 20; // SyntaxError: Identifier 'y' has already been declared
+```
+
+In this example, re-declaring `x` with `var` is allowed, but re-declaring `y` with `let` results in a syntax error.
+
+In summary, the main differences between `var` and `let` are related to variable scoping and hoisting behavior. `var` is function-scoped, hoisted to the top, and allows re-declaration. `let` is block-scoped, hoisted to the TDZ, and does not allow re-declaration within the same scope. It is generally recommended to use `let` or `const` over `var` for better variable scoping and avoiding common issues related to hoisting.

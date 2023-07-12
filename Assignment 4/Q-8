@@ -1,0 +1,58 @@
+Q.8 How can you destructure objects and arrays in ES6?
+
+Destructuring in ES6 is a convenient way to extract values from objects and arrays and assign them to variables in a more concise manner.
+
+1. **Destructuring Objects**: To destructure an object, you can use curly braces `{}` and specify the names of the properties you want to extract. The variable names should match the property names of the object.
+
+Example:
+```javascript
+const person = { name: 'Alice', age: 25 };
+const { name, age } = person;
+
+console.log(name); // Output: Alice
+console.log(age); // Output: 25
+```
+
+In this example, we destructure the `person` object to extract the `name` and `age` properties into separate variables with the same names.
+
+2. **Destructuring Arrays**: To destructure an array, you can use square brackets `[]` and specify the variable names to which you want to assign the array elements. The order of the variables corresponds to the order of the elements in the array.
+
+Example:
+```javascript
+const numbers = [1, 2, 3];
+const [a, b, c] = numbers;
+
+console.log(a); // Output: 1
+console.log(b); // Output: 2
+console.log(c); // Output: 3
+```
+
+In this example, we destructure the `numbers` array to assign its elements to variables `a`, `b`, and `c`.
+
+3. **Default Values**: You can provide default values for variables during destructuring in case the corresponding property or array element is undefined or missing.
+
+Example:
+```javascript
+const person = { name: 'Alice' };
+const { name, age = 25 } = person;
+
+console.log(name); // Output: Alice
+console.log(age); // Output: 25
+```
+
+In this example, the `age` property is missing in the `person` object, so the default value of 25 is assigned to the `age` variable during destructuring.
+
+4. **Rest Syntax**: The rest syntax (`...`) allows you to capture the remaining properties of an object or the remaining elements of an array into a new variable.
+
+Example:
+```javascript
+const person = { name: 'Alice', age: 25, city: 'London' };
+const { name, ...rest } = person;
+
+console.log(name); // Output: Alice
+console.log(rest); // Output: { age: 25, city: 'London' }
+```
+
+In this example, the `name` property is extracted into a separate variable, and the remaining properties of the `person` object are assigned to the `rest` variable as an object.
+
+Destructuring is a powerful feature in ES6 that allows you to extract values from objects and arrays concisely. It enhances code readability and simplifies variable assignment when working with complex data structures.

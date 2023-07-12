@@ -1,0 +1,48 @@
+Q.10 What is the purpose of the spread operator (...) in ES6?
+
+The spread operator (`...`) in ES6 has multiple purposes, allowing you to spread or expand elements of an iterable (like an array or string) into individual elements in various contexts.
+
+Here's a summary of the main purposes of the spread operator:
+
+1. **Array Spreading**: The spread operator can be used to spread the elements of an array into individual elements. It allows you to create a new array or pass array elements as individual arguments to a function.
+
+Example:
+```javascript
+const numbers = [1, 2, 3];
+const newArray = [...numbers];
+
+console.log(newArray); // Output: [1, 2, 3]
+
+// Passing array elements as individual arguments
+console.log(Math.max(...numbers)); // Output: 3
+```
+
+In this example, the spread operator `...` is used to spread the elements of the `numbers` array into a new array `newArray`. It also spreads the elements as individual arguments when finding the maximum value using `Math.max(...numbers)`.
+
+2. **Object Spreading**: The spread operator can also be used to spread the properties of an object into a new object or merge multiple objects together.
+
+Example:
+```javascript
+const obj1 = { name: 'Alice', age: 25 };
+const obj2 = { city: 'London', country: 'UK' };
+const mergedObj = { ...obj1, ...obj2 };
+
+console.log(mergedObj);
+// Output: { name: 'Alice', age: 25, city: 'London', country: 'UK' }
+```
+
+In this example, the spread operator `...` is used to spread the properties of `obj1` and `obj2` into a new object `mergedObj`, effectively merging the properties from both objects.
+
+3. **String Spreading**: The spread operator can also spread the characters of a string into individual elements. This can be useful when you want to convert a string into an array of characters or pass string characters as individual arguments.
+
+Example:
+```javascript
+const str = 'Hello';
+const charArray = [...str];
+
+console.log(charArray); // Output: ['H', 'e', 'l', 'l', 'o']
+```
+
+In this example, the spread operator `...` is used to spread the characters of the `str` string into an array of characters `charArray`.
+
+In summary, the spread operator (`...`) in ES6 allows you to spread or expand elements of an iterable (like an array or string) into individual elements. It is commonly used for creating new arrays, merging objects, or converting strings into arrays. It provides a concise and convenient way to work with iterable elements in various contexts.

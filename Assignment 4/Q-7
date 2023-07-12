@@ -1,0 +1,60 @@
+Q.7 What’s difference between map & forEach?
+
+The main difference between `map` and `forEach` in JavaScript lies in their return values and the way they handle the elements of an array.
+
+1. **Return Value**: The `map` method returns a new array with the same length as the original array, containing the results of applying a provided function to each element of the original array. On the other hand, the `forEach` method does not return anything; it simply iterates over the array and executes a provided function on each element.
+
+Example using `map`:
+```javascript
+const numbers = [1, 2, 3];
+const doubledNumbers = numbers.map((num) => num * 2);
+
+console.log(doubledNumbers); // Output: [2, 4, 6]
+```
+
+In this example, `map` is used to create a new array `doubledNumbers` by doubling each element of the original `numbers` array.
+
+Example using `forEach`:
+```javascript
+const numbers = [1, 2, 3];
+numbers.forEach((num) => console.log(num * 2));
+// Output:
+// 2
+// 4
+// 6
+```
+
+In this example, `forEach` is used to iterate over the `numbers` array and execute a function that logs the doubled value of each element.
+
+2. **Mutability**: The `map` method creates a new array, leaving the original array unchanged. It applies the provided function to each element of the original array and returns a new array with the transformed values. On the other hand, the `forEach` method mutates the original array directly, allowing you to modify its elements within the provided function.
+
+Example using `map`:
+```javascript
+const numbers = [1, 2, 3];
+const squaredNumbers = numbers.map((num) => {
+  num = num * num;
+  return num;
+});
+
+console.log(numbers); // Output: [1, 2, 3]
+console.log(squaredNumbers); // Output: [1, 4, 9]
+```
+
+In this example, the `numbers` array remains unchanged after using `map` to create a new array `squaredNumbers` with squared values.
+
+Example using `forEach`:
+```javascript
+const numbers = [1, 2, 3];
+numbers.forEach((num, index, array) => {
+  array[index] = num * num;
+});
+
+console.log(numbers); // Output: [1, 4, 9]
+```
+
+In this example, `forEach` is used to directly modify the `numbers` array by squaring each element.
+
+In summary, the main differences between `map` and `forEach` are:
+- `map` returns a new array with the results of applying a function to each element, while `forEach` does not return anything.
+- `map` creates a new array without modifying the original array, while `forEach` allows you to mutate the original array.
+- `map` is often used when you want to transform an array into a new array, while `forEach` is used when you want to iterate over an array and perform some operation on each element without creating a new array.
