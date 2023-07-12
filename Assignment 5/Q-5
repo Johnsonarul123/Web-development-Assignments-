@@ -1,0 +1,28 @@
+Q.5 What are Callbacks &  Callback Hell ?
+
+Callbacks are functions that are passed as arguments to other functions and are executed later, typically when an asynchronous operation completes. They allow you to specify what should happen after a certain task or operation finishes.
+
+In JavaScript, callbacks are commonly used with asynchronous functions to handle the result or perform additional actions. For example, when making an HTTP request to fetch data from a server, you can provide a callback function that gets called once the response is received. This callback function can then process the data or trigger other actions based on the result.
+
+Callback Hell, also known as the Pyramid of Doom, refers to a situation where you have multiple nested callbacks in your code. This occurs when you have asynchronous operations that depend on the results of previous asynchronous operations, leading to a deeply nested structure that can be difficult to read, understand, and maintain.
+
+Here's an example of what callback hell might look like:
+
+```javascript
+asyncOperation1((result1) => {
+  // Perform some action with result1
+  asyncOperation2(result1, (result2) => {
+    // Perform some action with result2
+    asyncOperation3(result2, (result3) => {
+      // Perform some action with result3
+      asyncOperation4(result3, (result4) => {
+        // And so on...
+      });
+    });
+  });
+});
+```
+
+As you can see, the code becomes increasingly indented and complex as more callbacks are added. This nesting can make it difficult to follow the flow of the code, understand error handling, and introduce potential bugs. It can also make it challenging to maintain and refactor the code.
+
+To alleviate callback hell, alternative approaches such as Promises and async/await have been introduced in JavaScript. These provide more structured and readable ways to handle asynchronous code, avoiding deep callback nesting and improving code maintainability.

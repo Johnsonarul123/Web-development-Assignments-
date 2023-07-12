@@ -1,0 +1,32 @@
+Q.3 Explain SetTimeOut and setInterval ?
+
+`setTimeout` and `setInterval` are functions in JavaScript used for scheduling and executing code at specified intervals.
+
+- `setTimeout` is used to execute a piece of code (a function or an expression) after a specific delay. It takes two parameters: the function or expression to execute and the delay time in milliseconds. After the specified delay, the code inside the `setTimeout` is executed once. It's like setting an alarm clock to ring after a certain amount of time.
+
+For example:
+```javascript
+setTimeout(() => {
+  console.log("Hello, after 3 seconds!");
+}, 3000);
+```
+In this example, the code inside the `setTimeout` function will run after a delay of 3 seconds (3000 milliseconds), and it will print "Hello, after 3 seconds!" to the console.
+
+- `setInterval` is used to repeatedly execute a piece of code (a function or an expression) at a specified interval. It takes two parameters: the function or expression to execute and the interval time in milliseconds. The code inside `setInterval` will be executed repeatedly at the specified interval until `clearInterval` is called or the program is terminated. It's like setting a timer to trigger an action at regular intervals.
+
+For example:
+```javascript
+let counter = 0;
+
+let intervalId = setInterval(() => {
+  counter++;
+  console.log("Counter:", counter);
+
+  if (counter === 5) {
+    clearInterval(intervalId); // Stops the interval after the counter reaches 5
+  }
+}, 1000);
+```
+In this example, the code inside the `setInterval` function will be executed every second (1000 milliseconds). It increments the `counter` variable and logs its value to the console. The interval stops when the `counter` reaches 5, using `clearInterval` to cancel the interval.
+
+These functions are commonly used for implementing time-based actions, animations, polling data from servers, or scheduling tasks in JavaScript applications. They provide a way to control the timing of code execution and add dynamic behavior to web applications.

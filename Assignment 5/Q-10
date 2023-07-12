@@ -1,0 +1,35 @@
+Q.10 How do you define an asynchronous function in JavaScript using async/await?
+
+To define an asynchronous function in JavaScript using `async`/`await`, you need to prefix the function declaration with the `async` keyword. This indicates that the function will contain asynchronous operations and that it will return a promise.
+
+Here's a simple example of defining an asynchronous function using `async`/`await`:
+
+```javascript
+async function fetchData() {
+  // Asynchronous operations
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
+
+  return data;
+}
+```
+
+In this example, the `fetchData` function is declared as `async`, indicating that it's an asynchronous function. Inside the function, asynchronous operations are performed using the `await` keyword. The `await` keyword pauses the execution of the function until the promise is resolved, and the result is assigned to the variable.
+
+Using `async`/`await` simplifies the handling of asynchronous code by allowing you to write it in a more synchronous-looking manner. It helps avoid callback nesting and makes the code easier to understand and maintain.
+
+You can call the `fetchData` function like any regular function and use `then` to handle the resolved value:
+
+```javascript
+fetchData().then((data) => {
+  // Handle the resolved data
+  console.log(data);
+}).catch((error) => {
+  // Handle any errors that occurred during the async function
+  console.error(error);
+});
+```
+
+Note that when using `async`/`await`, the function automatically returns a promise. This allows you to use `then` and `catch` to handle the resolved value or any errors thrown within the function.
+
+In summary, by using `async`/`await`, you can define asynchronous functions that make working with promises and handling asynchronous operations more readable and manageable.

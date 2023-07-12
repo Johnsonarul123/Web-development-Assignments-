@@ -1,0 +1,11 @@
+Q.4 how can you handle Async code in JavaScript ?
+
+In JavaScript, there are several ways to handle asynchronous code to ensure that it runs correctly and in the desired order. Here are a few common approaches:
+
+1. **Callbacks**: Callbacks are functions that are passed as arguments to asynchronous functions. When the asynchronous operation completes, it invokes the callback function, allowing you to handle the result or perform additional actions. Callbacks can be used to manage the flow of asynchronous code by chaining them together or nesting them. However, nesting multiple callbacks can lead to a situation known as "callback hell," which can make code difficult to read and maintain.
+
+2. **Promises**: Promises provide a more structured and intuitive way to handle asynchronous code. A promise represents the eventual completion (or failure) of an asynchronous operation and allows you to attach callbacks for handling success (`then`) or failure (`catch`). Promises can be chained together using `then` to create a sequence of asynchronous operations. Promises also have methods like `Promise.all` and `Promise.race` for handling multiple asynchronous operations simultaneously.
+
+3. **Async/await**: Async/await is a more recent addition to JavaScript and provides a more concise and synchronous-looking syntax for handling asynchronous code. It allows you to write asynchronous code in a way that resembles synchronous code, making it easier to understand and maintain. The `async` keyword is used to define an asynchronous function, and the `await` keyword is used within the function to pause the execution and wait for a promise to resolve before continuing. Async/await is built on top of promises and provides a more readable way to work with them.
+
+These approaches provide different ways to handle asynchronous code in JavaScript. Promises and async/await are generally preferred due to their readability and ease of use. They help avoid callback nesting and make it easier to reason about and control the flow of asynchronous operations.

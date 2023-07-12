@@ -1,0 +1,31 @@
+Q.8 Explain Purpose of Try and Catch Block & Why do we need it?
+
+The purpose of the `try` and `catch` block in JavaScript is to handle and manage errors that may occur during the execution of code. It provides a way to gracefully handle and recover from errors rather than allowing them to cause the program to crash or behave unexpectedly.
+
+Here's how the `try` and `catch` block works:
+
+1. The `try` block contains the code that may potentially throw an error or encounter an exception. It's the section of code where you want to watch for errors.
+
+2. If an error occurs within the `try` block, the execution of the code within the `try` block is immediately stopped, and the program jumps to the corresponding `catch` block.
+
+3. The `catch` block is where you specify the code to handle the error. It allows you to define custom actions or error handling logic. The error object that caused the exception is usually available as a parameter in the `catch` block, allowing you to inspect and work with the error details.
+
+By using `try` and `catch`, you can prevent errors from crashing your entire program and instead gracefully handle them. It helps in providing fallback actions, displaying appropriate error messages to users, or taking corrective measures when something unexpected happens during code execution.
+
+Here's a simple example:
+
+```javascript
+try {
+  // Code that may throw an error
+  const result = someFunction();
+  console.log('Result:', result);
+} catch (error) {
+  // Error handling
+  console.error('An error occurred:', error);
+  // Take appropriate actions, log error, show error message, etc.
+}
+```
+
+In this example, if `someFunction` throws an error, the program jumps to the `catch` block, allowing you to handle the error. You can log the error, display a user-friendly message, or perform any necessary actions to handle the exceptional situation.
+
+The `try` and `catch` block is essential for robust error handling and ensuring that your code can handle unexpected situations gracefully. It helps prevent crashes, improve user experience, and facilitate better debugging and troubleshooting of your applications.

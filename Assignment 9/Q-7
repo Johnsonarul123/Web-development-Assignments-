@@ -1,1 +1,65 @@
 Q.7 How do you handle conditional rendering in React?
+
+Conditional rendering in React refers to the ability to render different content based on certain conditions. Here's a simple explanation of how you can handle conditional rendering:
+
+1. Use JavaScript expressions (such as if statements or ternary operators) within your JSX code to conditionally render components or elements.
+
+2. Define the condition that determines whether the content should be rendered or not. It could be based on state, props, or any other variables or functions.
+
+3. Wrap the content you want to conditionally render with the appropriate conditional statement.
+
+Here are a few examples of conditional rendering in React:
+
+Using an if statement:
+
+```
+function MyComponent() {
+  const isLoggedIn = true;
+
+  if (isLoggedIn) {
+    return <p>Welcome, User!</p>;
+  } else {
+    return <p>Please log in to continue.</p>;
+  }
+}
+```
+
+Using a ternary operator:
+
+```
+function MyComponent() {
+  const isAdmin = true;
+
+  return (
+    <div>
+      {isAdmin ? <p>Welcome, Admin!</p> : <p>You don't have access.</p>}
+    </div>
+  );
+}
+```
+
+Using logical && operator:
+
+```
+function MyComponent() {
+  const data = ["Apple", "Banana", "Orange"];
+
+  return (
+    <div>
+      {data.length > 0 && (
+        <ul>
+          {data.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      )}
+      {data.length === 0 && <p>No items found.</p>}
+    </div>
+  );
+}
+```
+
+In these examples, different content is rendered based on the conditions provided. If the condition is true, the desired JSX elements or components are returned and rendered. Otherwise, an alternative content can be provided.
+
+By using conditional rendering, you can dynamically show or hide components, display different messages, or modify the UI based on various conditions.
+

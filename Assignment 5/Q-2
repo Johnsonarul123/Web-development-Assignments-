@@ -1,0 +1,19 @@
+Q.2 What are Web Apis ?
+
+Web APIs, or Application Programming Interfaces, are sets of rules and protocols that allow different software applications or systems to communicate with each other over the web. They provide a way for developers to access and interact with the functionality and data of other applications or services.
+
+Think of Web APIs as a waiter at a restaurant. The waiter serves as a bridge between you (the client) and the kitchen (the server). You communicate your order to the waiter, and they relay it to the kitchen. Once the food is ready, the waiter brings it back to you. In this analogy, the waiter is the Web API, taking your requests and delivering the responses.
+
+Web APIs come in various forms, including:
+
+1. **RESTful APIs**: These APIs are based on the principles of Representational State Transfer (REST). They use standard HTTP methods like GET, POST, PUT, DELETE to perform operations on resources (such as retrieving data, creating new data, updating existing data, and deleting data) using URLs as endpoints.
+
+2. **SOAP APIs**: SOAP (Simple Object Access Protocol) APIs use the XML format to structure requests and responses. They follow a more complex set of rules and are often used in enterprise-level systems.
+
+3. **JSON-RPC and XML-RPC APIs**: These APIs enable remote procedure calls (RPC) between systems using JSON (JavaScript Object Notation) or XML (eXtensible Markup Language) formats for data exchange.
+
+Web APIs are used extensively in web development to integrate different systems, retrieve data from external sources, perform actions on remote servers, and more. They allow developers to leverage existing functionalities and services without having to build everything from scratch.
+
+For example, popular web services like Twitter, Facebook, and Google Maps provide Web APIs that developers can use to retrieve tweets, post updates, access user data, and integrate maps into their applications.
+
+Overall, Web APIs act as intermediaries, enabling applications to talk to each other and exchange information, expanding the capabilities and interoperability of software systems.

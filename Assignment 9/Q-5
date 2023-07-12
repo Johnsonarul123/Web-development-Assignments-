@@ -41,4 +41,3 @@ In this example, the "setCount" function is used to update the "count" state. Wh
 
 In summary, using "setState" instead of modifying state directly in React ensures proper state management, triggers component re-rendering, provides granular control over state updates, and improves performance through batch updates.
 
-I hope this explanation helps! Let me know if you have any further questions.
